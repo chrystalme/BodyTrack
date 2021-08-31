@@ -1,4 +1,4 @@
-class MeasurementsController < ApplicationController
+class MeasurementController < ApplicationController
   before_action :set_measure
   before_action :set_measure_measurement, only %i[show update destroy]
 

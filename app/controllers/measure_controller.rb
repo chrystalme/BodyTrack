@@ -1,4 +1,4 @@
-class MeasuresController < ApplicationController
+class MeasureController < ApplicationController
   before_action :set_measure, only: %i[show update destroy]
 
   # GET /measures
