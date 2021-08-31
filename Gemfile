@@ -5,6 +5,7 @@ ruby '3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+gem 'dotenv-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -15,7 +16,7 @@ gem 'puma', '~> 5.0'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'rubocop', '>= 1.0', '< 2.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
