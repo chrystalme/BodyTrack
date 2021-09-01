@@ -4,7 +4,7 @@ class MeasurementController < ApplicationController
 
   #GET /measures/:measure_id/measurements
   def index
-    json_response(@measure.measurements)
+    json_response(current_user.measure.measurements)
   end
   
   #GET /measures/:measure_id/measurements/:id
@@ -14,7 +14,7 @@ class MeasurementController < ApplicationController
   
   #POST /measures/:measure_id/measurements
   def create
-    @measure.measurements.create!(measurement_params)
+    current_user.measure.measurements.create!(measurement_params)
     json_response(@measure, :created)
   end
   
