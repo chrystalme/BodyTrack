@@ -15,7 +15,7 @@ class MeasureController < ApplicationController
 
   # GET /measures/:id
   def show
-    json_response(@measure )
+    json_response(@measure)
   end
 
   # PUT /measures/:id
