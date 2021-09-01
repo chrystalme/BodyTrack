@@ -1,36 +1,37 @@
 class MeasurementController < ApplicationController
   before_action :set_measure
-  before_action :set_measure_measurement, only %i[show update destroy]
+  before_action :set_measure_measurement, only: %i[show update destroy]
 
-  #GET /measures/:measure_id/measurements
+  # GET /measures/:measure_id/measurements
   def index
     json_response(current_user.measure.measurements)
   end
-  
-  #GET /measures/:measure_id/measurements/:id
+
+  # GET /measures/:measure_id/measurements/:id
   def show
     json_response(@measurement)
   end
-  
-  #POST /measures/:measure_id/measurements
+
+  # POST /measures/:measure_id/measurements
   def create
     current_user.measure.measurements.create!(measurement_params)
     json_response(@measure, :created)
   end
-  
-  #PUT /measures/:measure_id/measurements/:id
+
+  # PUT /measures/:measure_id/measurements/:id
   def update
     @measurement.update(measurement_params)
     head :no_content
   end
-  
-  #DELETE /measures/:measure_id/measurements/:id
+
+  # DELETE /measures/:measure_id/measurements/:id
   def destroy
     @measurement.destroy
     head :no_content
   end
 
   private
+
   def measurement_params
     params.permit(:value, :date)
   end
@@ -42,6 +43,4 @@ class MeasurementController < ApplicationController
   def set_measure_measurement
     @measurement = @measure.measurements.find_by(id: :params[:id]) if @measure
   end
-
-
 end
