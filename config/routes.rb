@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :measure do
-    resources :measurements
+  namespace :api do
+    namespace :v1 do
+      resources :measure do
+        resources :measurement
+      end
+    end
   end
 
   post 'auth/login', to: 'authentication#authenticate'
