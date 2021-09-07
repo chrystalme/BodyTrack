@@ -2,6 +2,7 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
+User.create!(name: "Chrys", password_digest: 'chris414', email: "test@test,com")
 Measure.create!(title: 'Head Circumference', description: 'The circular measurement of the head', image: '/public/images/31010672.jpg')
 Measure.create!(title: 'Height', description: 'Measure of head to feet', image: '/public/images/31010672.jpg')
 Measure.create!(title: 'Weight', description: 'Mass of the baby without much clothes', image: '/public/images/31010672.jpg')
