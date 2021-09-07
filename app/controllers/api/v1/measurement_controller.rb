@@ -4,7 +4,7 @@ module Api
       before_action :set_measure
       before_action :set_measure_measurement, only: %i[show update destroy]
 
-      # GET /measures/:measure_id/measurements
+      # GET /measure/:measure_id/measurement
       def index
         json_response(MeasurementSerializer.new(current_user.measurements).serialized_json)
       end
