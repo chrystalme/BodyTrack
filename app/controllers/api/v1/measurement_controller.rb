@@ -6,7 +6,8 @@ module Api
 
       # GET /measure/:measure_id/measurement
       def index
-        json_response(MeasurementSerializer.new(current_user.measurements).serialized_json)
+        @measurements = current_user.measurements.all
+        json_response(MeasurementSerializer.new(@measurements).serialized_json)
       end
 
       # GET /measures/:measure_id/measurements/:id
@@ -35,7 +36,7 @@ module Api
       private
 
       def measurement_params
-        params.permit(:value, :date)
+        params.permit(:value, :date, :user_id, :measure_id)
       end
 
       def set_measure
