@@ -20,7 +20,7 @@ class Message
   end
 
   def self.account_created
-    'Account created Successfully'
+    'Account created successfully'
   end
 
   def self.account_not_created
@@ -29,5 +29,9 @@ class Message
 
   def self.expired_token
     'Sorry your token expired. Please login to continue'
+  end
+
+  def self.measurement_created
+    'Measurement created successfully'
   end
 end

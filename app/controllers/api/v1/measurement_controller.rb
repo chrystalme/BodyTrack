@@ -6,7 +6,7 @@ module Api
 
       # GET /measure/:measure_id/measurement
       def index
-        @measurements = current_user.measurements.all
+        @measurements = Measurement.all
         json_response(MeasurementSerializer.new(@measurements).serialized_json)
       end
 
@@ -17,8 +17,10 @@ module Api
 
       # POST /measures/:measure_id/measurements
       def create
-        current_user.measurements.create!(measurement_params)
-        json_response(MeasurementSerializer.new(@measure, :created).serialized_json)
+        @measure = Measurement.create!(measurement_params)
+        response = { message: Message.measurement_created }
+        # json_response(MeasurementSerializer.new(@measure, response).serialized_json)
+        json_response(response, :created)
       end
 
       # PUT /measures/:measure_id/measurements/:id
