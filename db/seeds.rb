@@ -6,12 +6,12 @@ Measurement.delete_all
 User.delete_all
 Measure.delete_all
 User.create!(name: "Chrys", password_digest: 'chris414', email: "test@test,com")
-Measure.create!(title: 'Head Circumference', description: 'The circular measurement of the head', image: '/public/images/31010672.jpg')
-Measure.create!(title: 'Height', description: 'Measure of head to feet', image: '/public/images/31010672.jpg')
-Measure.create!(title: 'Weight', description: 'Mass of the baby without much clothes', image: '/public/images/31010672.jpg')
-Measure.create!(title: 'Feet', description: 'Length of feet', image: '/public/images/31010672.jpg')
-Measure.create!(title: 'Hand', description: 'Length of hand from the finger to the shoulder', image: '/public/images/31010672.jpg')
-Measure.create!(title: 'Leg', description: 'Length of leg from foot to waist ', image: '/public/images/31010672.jpg')
+Measure.create!(title: 'Head Circumference', unit: 'cm', description: 'The circular measurement of the head', image: '/public/images/31010672.jpg')
+Measure.create!(title: 'Height', unit: 'cm', description: 'Measure of head to feet', image: '/public/images/31010672.jpg')
+Measure.create!(title: 'Weight', unit: 'kg', description: 'Mass of the baby without much clothes', image: '/public/images/31010672.jpg')
+Measure.create!(title: 'Feet', unit: 'cm', description: 'Length of feet', image: '/public/images/31010672.jpg')
+Measure.create!(title: 'Hand', unit: 'cm', description: 'Length of hand from the finger to the shoulder', image: '/public/images/31010672.jpg')
+Measure.create!(title: 'Leg', unit: 'cm', description: 'Length of leg from foot to waist ', image: '/public/images/31010672.jpg')
 
 Measurement.create!(value: 17, date: DateTime.now(), user_id: 1, measure_id: 2)
 Measurement.create!(value: 26, date: DateTime.now(), user_id: 1, measure_id: 3)
