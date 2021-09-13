@@ -2,8 +2,8 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
-User.delete_all
 Measurement.delete_all
+User.delete_all
 Measure.delete_all
 User.create!(name: "Chrys", password_digest: 'chris414', email: "test@test,com")
 Measure.create!(title: 'Head Circumference', description: 'The circular measurement of the head', image: '/public/images/31010672.jpg')
