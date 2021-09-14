@@ -35,7 +35,7 @@ module Api
       private
 
       def measure_params
-        params.permit(:title, :description, :image)
+        params.permit(:title, :unit, :description, :image)
       end
 
       def set_measure
