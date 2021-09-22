@@ -18,7 +18,7 @@ module Api
       private
 
       def measurement_params
-        params.permit(:value, :date, :user_id, :measure_id)
+        params.permit(:value, :user_id, :measure_id)
       end
     end
   end
