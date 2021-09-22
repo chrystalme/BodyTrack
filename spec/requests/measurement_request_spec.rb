@@ -54,7 +54,6 @@ RSpec.describe 'Measurement API' do
         expect(response).to have_http_status(422)
       end
     end
-
     context 'when an invalid request' do
       let(:invalid_data) { { value: nil }.to_json }
       before { post '/api/v1/measurement', params: invalid_data, headers: headers }
@@ -62,9 +61,9 @@ RSpec.describe 'Measurement API' do
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
       end
-
       it 'returns a failure message' do
-        expect(response.body).to match(/Validation failed: Measure must exist, Value can't be blank, Measure can't be blank/)
+        expect(response.body)
+          .to match(/Validation failed: Measure must exist, Value can't be blank, Measure can't be blank/)
       end
     end
   end
