@@ -9,9 +9,9 @@ module Api
 
       # POST /measurements
       def create
-        @measure = current_user.measurements.create!(measurement_params)
+        current_user.measurements.create!(measurement_params)
         response = { message: Message.measurement_created }
-        # json_response(MeasurementSerializer.new(@measure, response).serialized_json)
+        # json_response(MeasurementSerializer.new(response).serialized_json)
         json_response(response, :created)
       end
 
