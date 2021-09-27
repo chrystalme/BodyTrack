@@ -4,7 +4,8 @@ module Api
       # GET /measurement
       def index
         @measurements = current_user.measurements.all.order(created_at: :DESC)
-        json_response(MeasurementSerializer.new(@measurements).serialized_json)
+        # json_response(MeasurementSerializer.new(@measurements).serialized_json)
+        json_response(@measurements)
       end
 
       # POST /measurements

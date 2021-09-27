@@ -6,7 +6,8 @@ module Api
       # GET /measures
       def index
         @measures = Measure.all
-        json_response(MeasureSerializer.new(@measures, options).serialized_json)
+        # json_response(MeasureSerializer.new(@measures, options).serialized_json)
+        json_response(@measures)
       end
 
       # POST /measures
