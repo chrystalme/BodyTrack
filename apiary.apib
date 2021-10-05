@@ -75,9 +75,8 @@ appointments.
 
 ### Measure index [GET/measure/]
 
-You may create your own measure using this action. It takes a JSON
-object containing a measure and a collection of answers in the
-form of choices.
+You may show all your own measure using this action. It requires a header
+with bearer token.
 
 + Request (application/json)
 
@@ -100,8 +99,7 @@ form of choices.
 ### Create a New Measure [POST]
 
 You may create your own measure using this action. It takes a JSON
-object containing a measure and a collection of answers in the
-form of choices.
+object containing a measure and a header authentication with bearer token.
 
 + Request (application/json)
 
@@ -119,9 +117,8 @@ form of choices.
         
 ### Update Measure [PUT/measure/1]
 
-You may create your own measure using this action. It takes a JSON
-object containing a measure and a collection of answers in the
-form of choices.
+You may update your measure using this action. It take a header with authentication 
+carrying bearer token.
 
 + Request (application/json)
 
@@ -140,9 +137,7 @@ form of choices.
         
 ### Delete Measure [DELETE/measure/1]
 
-You may create your own measure using this action. It takes a JSON
-object containing a measure and a collection of answers in the
-form of choices.
+You may delete measure using this action.
 
 + Request (application/json)
 
@@ -155,9 +150,7 @@ form of choices.
         
 ### Show Measure [GET/measure/1]
 
-You may create your own measure using this action. It takes a JSON
-object containing a measure and a collection of answers in the
-form of choices.
+You may show own measure using this action.
 
 + Request (application/json)
 
