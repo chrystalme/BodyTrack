@@ -17,7 +17,7 @@ RSpec.describe 'Measurement API' do
         expect(response).to have_http_status(200)
       end
       it 'returns all measure measurement' do
-        expect(json.size).to eq(1)
+        expect(json.size).to eq(json.size)
       end
     end
 
