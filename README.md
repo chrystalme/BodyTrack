@@ -1,24 +1,12 @@
-# README
+# BodyTrack for Baby Physiological Progress Monitoring(API)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application helps to track baby physiological progress by taking various body measurements. The application shows the monthly growth of the baby for three months, Although more data can be added, the progress only display for three doctor's appointments.
 
-Things you may want to cover:
+### Built with
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby on rails
+Ruby
+RSpec
+JsonWebToken
+FastJsonapi
+Serializer
