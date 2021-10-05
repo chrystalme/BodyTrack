@@ -1,0 +1,245 @@
+FORMAT: 1A
+HOST: https://secure-escarpment-91489.herokuapp.com
+
+# BodyTrack for Baby Physiological Progress Monitoring(API)
+
+This application helps to track baby physiological 
+progress by taking various body measurements. 
+The application shows the monthly growth of the baby for three months,
+Although more data can be added, the progress only display for three doctor's 
+appointments.
+
+## User Authentication [/auth/login]
+
+### Authenticate user [POST/auth/login]
+
++ Request (application/json)
+
+        {
+        "email": "tester@test.com",
+        "password": "chris414"
+        }
+
++ Response 200 (application/json)
+
+        {
+        "auth_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzM0Mzg1OTh9.B2H0zQwBCcivepmau0gDzONM_ZOyWAhZuPqYaYc6yLU"
+        }
+
+
+## User Registration [/auth/signup]
+
+### Register user [POST/auth/signup]
+
++ Request (application/json)
+
+        {
+        "name": "Test User",
+        "email": "new@test.com",
+        "password": "123456",
+        "password_confirmation": "123456"
+        }
+
++ Response 200 (application/json)
+
+        {
+        "message": "Account created successfully",
+        "auth_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzI0MTMxMjl9.vGU5HM9h2xtyv0Z-g5J0521r0sRinsMlgAUPrBSoa3Y"
+        }
+        
+        ## User Registration [/auth/signup]
+
+### show user [POST/user_info]
+
++ Request (application/json)
+
+   + Header
+   
+             Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzI0MTMxMjl9.vGU5HM9h2xtyv0Z-g5J0521r0sRinsMlgAUPrBSoa3Y"
+
++ Response 200 (application/json)
+
+        {
+        "data": {
+        "id": "3",
+        "type": "user",
+        "attributes": {
+        "id": 3,
+        "name": "Test User",
+        "email": "new@test.com"
+        }
+        }
+        }
+        
+## Measure [/api/v1/measure]
+
+### Measure index [GET/measure/]
+
+You may create your own measure using this action. It takes a JSON
+object containing a measure and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+
+
++ Response 201 (application/json)
+
+        [
+          {
+            "id": 8,
+            "title": "Head Circumference",
+            "description": "The circular measurement of the head",
+            "image": "/public/images/31010672.jpg",
+            "created_at": "2021-09-13T19:08:19.281Z",
+            "updated_at": "2021-09-13T19:08:19.281Z",
+            "unit": "cm"
+          }
+        ]
+    
+### Create a New Measure [POST]
+
+You may create your own measure using this action. It takes a JSON
+object containing a measure and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+        "title" : "Head Circumference",
+        "description" : "Circular measurment of the head",
+        "unit" :  "cm"
+        }
+
++ Response 201 (application/json)
+
+        {
+        "message" : "Measure created successfully"
+        }
+        
+### Update Measure [PUT/measure/1]
+
+You may create your own measure using this action. It takes a JSON
+object containing a measure and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+        "title" : "Head Circumference",
+        "description" : "Circular measurment of the head",
+        "unit" :  "cm"
+        }
+
+
++ Response 201 (application/json)
+
+        {
+        "message" : "Measure updated successfully"
+        }
+        
+### Delete Measure [DELETE/measure/1]
+
+You may create your own measure using this action. It takes a JSON
+object containing a measure and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+
++ Response 201 (application/json)
+
+        {
+        "message" : "Measure deleted successfully"
+        }
+        
+### Show Measure [GET/measure/1]
+
+You may create your own measure using this action. It takes a JSON
+object containing a measure and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+
+
++ Response 201 (application/json)
+
+        {
+          "data": {
+            "id": "1",
+            "type": "measure",
+            "attributes": {
+              "title": "Head Circumference",
+              "unit": "cm",
+              "description": "The circular measurement of the head",
+              "image": "/public/images/31010672.jpg"
+        },
+            "relationships": {
+              "measurements": {
+                "data": [
+                  {
+                    "id": "1",
+                    "type": "measurement"
+                  },
+                  {
+                    "id": "7",
+                    "type": "measurement"
+                  },
+                  {
+                    "id": "13",
+                    "type": "measurement"
+                  }
+                ]
+              }
+            }
+          }
+        }
+            
+## Measurement [/api/v1/measurement]
+
+### create Measurement [POST/measurement]
+
++ Request (application/json)
+
+        {
+        "value": "38",
+        "measure_id": "1"
+        }
+
++ Response 200 (application/json)
+
+        {
+        "message" : "Measurement created successfully"
+        }
+
+### Show all Measurements [GET/measurement]
+
++ Response 200 (application/json)
+
+        [
+              {
+                "id": 13,
+                "value": 39,
+                "measure_id": 1,
+                "created_at": "2021-09-27T05:30:10.775Z",
+                "updated_at": "2021-09-27T05:30:10.775Z",
+                "user_id": 2
+              },
+              {
+                "id": 12,
+                "value": 65,
+                "measure_id": 2,
+                "created_at": "2021-09-27T05:30:06.936Z",
+                "updated_at": "2021-09-27T05:30:06.936Z",
+                "user_id": 2
+              },
+              {
+                "id": 11,
+                "value": 6,
+                "measure_id": 3,
+                "created_at": "2021-09-27T05:30:02.778Z",
+                "updated_at": "2021-09-27T05:30:02.778Z",
+                "user_id": 2
+              }
+          ]
