@@ -13,6 +13,21 @@ This application helps to track baby physiological progress by taking various bo
 
 [Documentation](https://bodytrack.docs.apiary.io/)
 
+## Getting Started
+
+ - Clone project
+```
+$ git clone https://github.com/chrystalme/BodyTrack.git
+```
+ - Install dependencies
+ ```
+ $ bundle install
+ ```
+  - Run RSpec Tests
+ ```
+ $ bundle exec rspec
+ ```
+
 ## Networking Links
  - GitHub: [@chrystalme](https://github.com/chrystalme)
 - Twitter: [@afam_chrys](https://twitter.com/afam_chrys)
