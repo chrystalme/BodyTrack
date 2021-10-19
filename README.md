@@ -1,24 +1,57 @@
-# README
+# BodyTrack for Baby Physiological Progress Monitoring(API)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application helps to track baby physiological progress by taking various body measurements. The application shows the monthly growth of the baby for three months, Although more data can be added, the progress only display for three doctor's appointments.
 
-Things you may want to cover:
+### Built with
 
-* Ruby version
+ - Ruby on rails
+ - Ruby
+ - RSpec
+ - JsonWebToken
+ - FastJsonapi
+ - Serializer
 
-* System dependencies
+[Documentation](https://bodytrack.docs.apiary.io/)
 
-* Configuration
+## Getting Started
 
-* Database creation
+ - Clone project
+```
+$ git clone https://github.com/chrystalme/BodyTrack.git
+```
+ - Install dependencies
+ ```
+ $ bundle install
+ ```
+  - Run RSpec Tests
+ ```
+ $ bundle exec rspec
+ ```
 
-* Database initialization
+## Networking Links
+ - GitHub: [@chrystalme](https://github.com/chrystalme)
+- Twitter: [@afam_chrys](https://twitter.com/afam_chrys)
+- LinkedIn: [Afam Ifeanyi](https://www.linkedin.com/in/afam-chrys/)
+- AngelList: [Chrys](https://angel.co/malieze-afam-ifeanyi-chrys)
 
-* How to run the test suite
+👤 **Catch me on**
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 🤝 Contributing
 
-* ...
+Contributions, issues, and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse for creating an environment for remote learning.
+- Family - Nadi and Mila for their patience with me through my study time.
+- My Partners and Mentor
+
+## 📝 License
+
+This project is [MIT](https://mit-lincense.org) licensed.
+
